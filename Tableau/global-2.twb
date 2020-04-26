@@ -15,29 +15,11 @@
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
-    <datasource caption='global-1' inline='true' name='federated.0006fm80iylkt31a9cye90zmm9b2' version='18.1'>
+    <datasource caption='global-2' inline='true' name='federated.0006fm80iylkt31a9cye90zmm9b2' version='18.1'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='global-1' name='textscan.01gh5pn1wui1rg1bckf4b0j9gq99'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/Prep/Data' filename='global-1.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='global-2' name='textscan.18f4iv31owat3d17kw2dp0699mtp'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/Prep/Data' filename='global-2.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='grid' name='textscan.1f78cl500gseuk16uk9zs0o29555'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/Prep/Data' filename='grid.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='global-2-1' name='textscan.1afcyr21pskh8w1d7y4020lb0bpx'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/Prep/Data' filename='global-2-1.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='grid (2)' name='textscan.068mwmx1e9yjma1gsgl28193mto1'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/Prep/Data' filename='grid.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='global-2 (2)' name='textscan.1ki0yps1ea6zzv156r6410rugjgd'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/capstone/Data' filename='global-2.csv' password='' server='' />
-          </named-connection>
-          <named-connection caption='grid (3)' name='textscan.0mkdijl0vj94m913qu45v036l7n2'>
-            <connection class='textscan' directory='/Users/dbotnari/Desktop/docs/VMs/shared/Capstone/capstone/Data' filename='grid.csv' password='' server='' />
+          <named-connection caption='global-2' name='textscan.1afcyr21pskh8w1d7y4020lb0bpx'>
+            <connection class='textscan' directory='../Data' filename='global-2.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation join='inner' type='join'>
@@ -47,7 +29,7 @@
               <expression op='[grid.csv].[ID]' />
             </expression>
           </clause>
-          <relation connection='textscan.1ki0yps1ea6zzv156r6410rugjgd' name='global-2.csv' table='[global-2#csv]' type='table'>
+          <relation connection='textscan.1afcyr21pskh8w1d7y4020lb0bpx' name='global-2.csv' table='[global-2#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
               <column datatype='string' name='MAP_ID' ordinal='0' />
               <column datatype='real' name='IN_JAN' ordinal='1' />
@@ -88,7 +70,7 @@
               <column datatype='integer' name='RISK_ZONE_ID' ordinal='36' />
             </columns>
           </relation>
-          <relation connection='textscan.0mkdijl0vj94m913qu45v036l7n2' name='grid.csv' table='[grid#csv]' type='table'>
+          <relation connection='textscan.1afcyr21pskh8w1d7y4020lb0bpx' name='grid.csv' table='[grid#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
               <column datatype='string' name='ID' ordinal='0' />
               <column datatype='real' name='LAT_MIN' ordinal='1' />
@@ -645,7 +627,7 @@
       <column aggregation='Sum' datatype='integer' name='[RISK_ZONE_ID]' role='dimension' type='ordinal' />
       <column datatype='real' name='[YEAR_CONSTRUCTION]' role='dimension' type='quantitative' />
       <column-instance column='[Calculation_288793369238286338]' derivation='None' name='[none:Calculation_288793369238286338:nk]' pivot='key' type='nominal' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.422414' measure-ordering='alphabetic' measure-percentage='0.577586' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.676667' measure-ordering='alphabetic' measure-percentage='0.323333' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:Calculation_288793369238286338:nk]' type='palette'>
@@ -678,7 +660,7 @@
   <shared-views>
     <shared-view name='federated.0006fm80iylkt31a9cye90zmm9b2'>
       <datasources>
-        <datasource caption='global-1' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
+        <datasource caption='global-2' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
       </datasources>
       <datasource-dependencies datasource='federated.0006fm80iylkt31a9cye90zmm9b2'>
         <column caption='Risk Zone' datatype='string' name='[Calculation_288793369238286338]' role='dimension' type='nominal'>
@@ -696,7 +678,7 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='global-1' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
+            <datasource caption='global-2' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
           </datasources>
           <datasource-dependencies datasource='federated.0006fm80iylkt31a9cye90zmm9b2'>
             <column caption='Risk Zone' datatype='string' name='[Calculation_288793369238286338]' role='dimension' type='nominal'>
@@ -788,7 +770,7 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='global-1' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
+            <datasource caption='global-2' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
           </datasources>
           <datasource-dependencies datasource='federated.0006fm80iylkt31a9cye90zmm9b2'>
             <column caption='Risk Zone' datatype='string' name='[Calculation_288793369238286338]' role='dimension' type='nominal'>
@@ -862,7 +844,7 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='global-1' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
+            <datasource caption='global-2' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
           </datasources>
           <mapsources>
             <mapsource name='Tableau' />
@@ -957,7 +939,7 @@
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
       <datasources>
-        <datasource caption='global-1' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
+        <datasource caption='global-2' name='federated.0006fm80iylkt31a9cye90zmm9b2' />
       </datasources>
       <datasource-dependencies datasource='federated.0006fm80iylkt31a9cye90zmm9b2'>
         <column caption='Risk Zone' datatype='string' name='[Calculation_288793369238286338]' role='dimension' type='nominal'>
@@ -1026,8 +1008,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='800' minheight='800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='25' type='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='24' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='37' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='36' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
                 <zone h='19125' id='8' mode='checkdropdown' name='ZoneRiskDistribution(3)' param='[federated.0006fm80iylkt31a9cye90zmm9b2].[none:Calculation_288793369238286338:nk]' type='filter' w='24200' x='75000' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1216,7 +1198,7 @@
           <default-map-tool-selection tool='1' />
         </viewpoint>
       </viewpoints>
-      <active id='8' />
+      <active id='-1' />
       <simple-id uuid='{25FE451E-E6EB-4B25-BDD6-2B5CB7FEF2CA}' />
     </window>
   </windows>
