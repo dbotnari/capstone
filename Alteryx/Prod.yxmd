@@ -3,14 +3,14 @@
   <Nodes>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="569" height="277" />
+        <Position x="54" y="54" width="119.159" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Crimes</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Disabled value="True" />
+          <Folded value="True" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -243,14 +243,14 @@
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="78" y="414" width="553" height="333" />
+        <Position x="78" y="414" width="102.325" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Sim</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Disabled value="True" />
+          <Folded value="True" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -534,6 +534,1821 @@
         </Node>
       </ChildNodes>
     </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="76.99998" y="809" width="184.1762" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Real - FilterByDate</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="102" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\sim-1.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-1.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="INCIDENT_NBR" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="CREATION_DATE_TIME" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="DESCRIPTION_GROUPE" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="CASERNE" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="NOM_VILLE" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="NOM_ARROND" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="DIVISION" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="NOMBRE_UNITES" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="CIV" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="LONGITUDE" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+                <Field name="LATITUDE" size="254" source="File: Z:\Capstone\Prep\Data\sim-1.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="270" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ToDate([CREATION_DATE_TIME])" field="Date" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Date = ToDate([CREATION_DATE_TIME])
+
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="450" y="858" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_5260_fc6f632e41564679bdfa9d70624ee6e8_\Engine_8940_9bc9ed4ee88a4e8d98bc71dc0c842af9_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="582" y="858" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_5260_fc6f632e41564679bdfa9d70624ee6e8_\Engine_8940_34faad3747874b7395a79596a0cba12b_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="606" y="1038" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-1-1.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-1-1.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="366" y="858" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_5260_fc6f632e41564679bdfa9d70624ee6e8_\Engine_8940_6199fd16e3704c2094a155e3219ecf0d_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="186" y="1026" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_5260_fc6f632e41564679bdfa9d70624ee6e8_\Engine_8940_f7ec7d8659dd43b7bb74c0133772e1fb_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="198" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="DESCRIPTION_GROUPE" selected="False" />
+                <SelectField field="CASERNE" selected="False" />
+                <SelectField field="NOM_VILLE" selected="False" />
+                <SelectField field="NOM_ARROND" selected="False" />
+                <SelectField field="DIVISION" selected="False" />
+                <SelectField field="NOMBRE_UNITES" selected="False" />
+                <SelectField field="CIV" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="378" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[CREATION_DATE_TIME] &gt; "2020-05-05"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&gt;</Operator>
+                <Field>CREATION_DATE_TIME</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-05-09 12:11:24</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2020-05-05</Operand>
+                  <StartDate>2020-05-09 12:11:24</StartDate>
+                  <EndDate>2020-05-09 12:11:24</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[CREATION_DATE_TIME] &gt; "2020-05-05"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="486" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="INCIDENT_NBR" selected="True" />
+                <SelectField field="Date" selected="True" />
+                <SelectField field="CREATION_DATE_TIME" selected="False" />
+                <SelectField field="LONGITUDE" selected="True" />
+                <SelectField field="LATITUDE" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="78" y="1169" width="237.5447" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Real - GroupByMapAndDate</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="103" y="1303" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\sim-2.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-2.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="INCIDENT_NBR" size="254" source="File: Z:\Capstone\Prep\Data\sim-2.csv" type="V_WString" />
+                <Field name="Date" size="254" source="File: Z:\Capstone\Prep\Data\sim-2.csv" type="V_WString" />
+                <Field name="LONGITUDE" size="254" source="File: Z:\Capstone\Prep\Data\sim-2.csv" type="V_WString" />
+                <Field name="LATITUDE" size="254" source="File: Z:\Capstone\Prep\Data\sim-2.csv" type="V_WString" />
+                <Field name="MAP_ID" size="254" source="File: Z:\Capstone\Prep\Data\sim-2.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="402" y="1326" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-3.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-3.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="354" y="1218" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_8232_74883d8b515445298ad63ab2b3be350a_\Engine_8940_06a00ed85e45421689603b829f6d4cff_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="187" y="1399" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_8232_74883d8b515445298ad63ab2b3be350a_\Engine_8940_af1b7f15ca7a4b6aa5be5e00d391d4b1_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="198" y="1302" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="LONGITUDE" selected="False" />
+                <SelectField field="LATITUDE" selected="False" />
+                <SelectField field="DESCRIPTION_GROUPE" selected="False" />
+                <SelectField field="CASERNE" selected="False" />
+                <SelectField field="NOM_VILLE" selected="False" />
+                <SelectField field="NOM_ARROND" selected="False" />
+                <SelectField field="DIVISION" selected="False" />
+                <SelectField field="NOMBRE_UNITES" selected="False" />
+                <SelectField field="CIV" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="48">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="294" y="1302" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="MAP_ID" action="GroupBy" rename="Group By_MAP_ID" />
+                <SummarizeField field="Date" action="GroupBy" rename="Group By_Date" />
+                <SummarizeField field="INCIDENT_NBR" action="Count" rename="Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="66" y="1518" width="222.2546" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Real - JoinWithProperties</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="90.99999" y="1627" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\sim-3.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-3.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Group By_MAP_ID" size="254" source="File: Z:\Capstone\Prep\Data\sim-3.csv" type="V_WString" />
+                <Field name="Group By_Date" size="254" source="File: Z:\Capstone\Prep\Data\sim-3.csv" type="V_WString" />
+                <Field name="Count" size="254" source="File: Z:\Capstone\Prep\Data\sim-3.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="330" y="1602" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_3056_144bb9e2fade490084e87d8a74b884dc_\Engine_3952_d382998717a14e7abb775a8b28e74f90_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="52">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="175" y="1567" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_3056_144bb9e2fade490084e87d8a74b884dc_\Engine_3952_c3e1f1248e1c4277a9d8e7197f790a4f_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="187" y="1651" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="LONGITUDE" selected="False" />
+                <SelectField field="LATITUDE" selected="False" />
+                <SelectField field="DESCRIPTION_GROUPE" selected="False" />
+                <SelectField field="CASERNE" selected="False" />
+                <SelectField field="NOM_VILLE" selected="False" />
+                <SelectField field="NOM_ARROND" selected="False" />
+                <SelectField field="DIVISION" selected="False" />
+                <SelectField field="NOMBRE_UNITES" selected="False" />
+                <SelectField field="CIV" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="270" y="1650" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Group By_Date] = "2020-05-05"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Group By_Date</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-05-09 12:36:29</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2020-05-05</Operand>
+                  <StartDate>2020-05-09 12:36:29</StartDate>
+                  <EndDate>2020-05-09 12:36:29</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Group By_Date] = "2020-05-05"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="270" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Group By_Date] = "2020-05-06"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Group By_Date</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-05-09 12:37:41</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2020-05-06</Operand>
+                  <StartDate>2020-05-09 12:37:41</StartDate>
+                  <EndDate>2020-05-09 12:37:41</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Group By_Date] = "2020-05-06"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="342" y="1686" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_3056_144bb9e2fade490084e87d8a74b884dc_\Engine_3952_e34057967e45424093da704e9828896f_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="258" y="1782" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Group By_Date] = "2020-05-07"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Group By_Date</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-05-09 12:37:41</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2020-05-07</Operand>
+                  <StartDate>2020-05-09 12:37:41</StartDate>
+                  <EndDate>2020-05-09 12:37:41</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Group By_Date] = "2020-05-07"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="80">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="342" y="1758" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_3056_144bb9e2fade490084e87d8a74b884dc_\Engine_3952_60f185343fb44854b5a89511d869d409_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="390" y="1650" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-3-1.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-3-1.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="82">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="402" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-3-2.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-3-2.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="83">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="402" y="1782" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-3-3.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-3-3.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="66" y="1950" width="222.2546" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Real - JoinWithProperties</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="91.00004" y="2059" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\sim-3-3.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-3-3.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Group By_MAP_ID" size="254" source="File: Z:\Capstone\Prep\Data\sim-3-3.csv" type="V_WString" />
+                <Field name="Group By_Date" size="254" source="File: Z:\Capstone\Prep\Data\sim-3-3.csv" type="V_WString" />
+                <Field name="Count" size="254" source="File: Z:\Capstone\Prep\Data\sim-3-3.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="64">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="774" y="2142" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-4-3.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-4-3.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="65">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="223" y="2215" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_7110cadcd7ce49ba966fe1d01436f88a_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="175" y="1999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_ba4aa3506d9440e4a23da691cf92c007_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="187" y="2083" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="LONGITUDE" selected="False" />
+                <SelectField field="LATITUDE" selected="False" />
+                <SelectField field="DESCRIPTION_GROUPE" selected="False" />
+                <SelectField field="CASERNE" selected="False" />
+                <SelectField field="NOM_VILLE" selected="False" />
+                <SelectField field="NOM_ARROND" selected="False" />
+                <SelectField field="DIVISION" selected="False" />
+                <SelectField field="NOMBRE_UNITES" selected="False" />
+                <SelectField field="CIV" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="139.0001" y="2167" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\properties-8.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>properties-8.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="MAP_ID" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="NB_PROPERTIES" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="FLOORS" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="HOUSINGS" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="YEAR_CONSTRUCTION" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="LAND_AREA" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="BUILDING_AREA" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="USAGE_LOGEMENT" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="CATEGORY_REGULAR" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+                <Field name="CATEGORY_CONDOMINIUM" size="254" source="File: Z:\Capstone\Prep\Data\properties-8.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="69">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="283" y="2119" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Group By_MAP_ID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="MAP_ID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="70">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="367" y="2167" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_d7d1b6ebac074aa18df3ad5316af1e81_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="355" y="2047" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_dde2d972b9964cd883c73a513b6f4794_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="72">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="343.0001" y="2215" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_f68faa9663cd4ffabd954097532615fc_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="73">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="391" y="2119" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="474" y="2202" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_d5aaa3b3e94544a895da7661ced86904_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="486" y="2118" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Group By_MAP_ID" selected="False" />
+                <SelectField field="Count" selected="True" type="Int32" size="4" />
+                <SelectField field="NB_PROPERTIES" selected="False" />
+                <SelectField field="FLOORS" selected="False" />
+                <SelectField field="HOUSINGS" selected="False" />
+                <SelectField field="YEAR_CONSTRUCTION" selected="False" />
+                <SelectField field="LAND_AREA" selected="False" />
+                <SelectField field="BUILDING_AREA" selected="False" />
+                <SelectField field="USAGE_LOGEMENT" selected="False" />
+                <SelectField field="CATEGORY_REGULAR" selected="False" />
+                <SelectField field="CATEGORY_CONDOMINIUM" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="85">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="570" y="2118" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;2020-05-07&quot;&#xA;" field="Group By_Date" size="254" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Group By_Date = "2020-05-07"
+
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="86">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="738" y="2214" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_ce52e73bf523442e878b5481c42832e1_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="87">
+          <GuiSettings>
+            <Position x="666" y="2118" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (11)">"Group By_Date","Count","MAP_ID"</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="88">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="750" y="2082" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Count] &gt; 0</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&gt;</Operator>
+                <Field>Count</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-05-09 13:13:34</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <StartDate>2020-05-09 13:13:34</StartDate>
+                  <EndDate>2020-05-09 13:13:34</EndDate>
+                  <Operand>0</Operand>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Count] &gt; 0</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="89">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="834" y="2058" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_388_eaf412431a4a474bb0811568a07a805c_\Engine_3952_182651b5d4eb42c291095490606373b5_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="641" y="53" width="569" height="277" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Crimes-2</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="90">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="666" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>28591</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>interventionscitoyendo-06.05.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="CATEGORIE" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="DATE" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="QUART" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="PDQ" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="X" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="Y" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="LONGITUDE" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+                <Field name="LATITUDE" size="254" source="File: Z:\Capstone\Prep\Data\interventionscitoyendo-06.05.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="91">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="774" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_1384_8b88e1cc5afa4992a8e63c504f2bb4d8_\Engine_420_b0f8a8680be744b5b209915c2efc6047_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="93">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="786" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="DATE" selected="True" type="Date" size="10" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="94">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1098" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_1384_8b88e1cc5afa4992a8e63c504f2bb4d8_\Engine_420_5f05eeecc9814b53bfa81640efafa02d_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="95">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="990" y="150" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="DATE" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DATE - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="96">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1110" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\crimes-0.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>crimes-0.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="97">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="978" y="210" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_1384_8b88e1cc5afa4992a8e63c504f2bb4d8_\Engine_420_16735639bc7f418ab4da7b86c6f43797_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="665" y="413" width="102.325" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Sim</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="99">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="690" y="522" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>donneesouvertes-interventions-sim-06.05.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="INCIDENT_NBR" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="CREATION_DATE_TIME" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="INCIDENT_TYPE_DESC" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="DESCRIPTION_GROUPE" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="CASERNE" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="NOM_VILLE" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="NOM_ARROND" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="DIVISION" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="NOMBRE_UNITES" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="CIV" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="MTM8_X" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="MTM8_Y" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="LONGITUDE" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+                <Field name="LATITUDE" size="254" source="File: Z:\Capstone\Prep\Data\donneesouvertes-interventions-sim-06.05.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="100">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="798" y="606" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_1384_8b88e1cc5afa4992a8e63c504f2bb4d8_\Engine_420_33d8b4294b134167966c84a277b2e50a_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="102">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="810" y="522" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="CREATION_DATE_TIME" selected="True" type="WString" size="254" />
+                <SelectField field="DATE" selected="False" type="Date" size="10" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="103">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1122" y="462" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_1384_8b88e1cc5afa4992a8e63c504f2bb4d8_\Engine_420_0dd71199ef864c02be5ee3848ced5c1b_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="104">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1014" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="CREATION_DATE_TIME" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>CREATION_DATE_TIME - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="105">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1134" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">Z:\Capstone\Prep\Data\sim-0.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>sim-0.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="107">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="882" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\IEUser\AppData\Local\Temp\Engine_1384_8b88e1cc5afa4992a8e63c504f2bb4d8_\Engine_420_c5a407495838494f9e4659a5422d7693_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -599,6 +2414,226 @@
     <Connection>
       <Origin ToolID="21" Connection="Output" />
       <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="True" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="True" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="True" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="True" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="True" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="True" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="True" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="69" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="69" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Join" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Left" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Right" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="69" Connection="Join" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="69" Connection="Right" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="Output" />
+      <Destination ToolID="85" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="85" Connection="Output" />
+      <Destination ToolID="87" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output26" />
+      <Destination ToolID="86" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output26" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output26" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="88" Connection="True" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="90" Connection="Output" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="90" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="93" Connection="Output" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="93" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Output" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="105" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
